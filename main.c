@@ -48,6 +48,6 @@ int main(void)
         scanf("%d", &exit);
     } while (exit != 0);
     
-    printf("Thanks for using this version of CFU calculator\n");
+    printf("\t\t\t=====Thanks for using this version of CFU calculator=====\t\t\t\n\n");
     return(0);
 }
