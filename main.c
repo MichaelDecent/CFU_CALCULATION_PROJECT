@@ -17,8 +17,23 @@ int main(void)
 
         printf ("\t\t\t============ COLONY FORMING UNIT (CFU) CALCULATOR ==========\t\t\t\n\n\n");
 
-        printf("Input the COLONY COUNT => ");
-        scanf("%d", &c_count);
+        c_count = 0;
+        do
+        {    
+            printf("Input the COLONY COUNT => ");
+            c_count = char_error (stdin);
+            if (c_count == 0)
+                printf("Invalid number entered (N/B: colony count must be between 30 and 300)\n\n" );
+
+            else
+            {
+                if (c_count < 30)
+                    printf("Colony Count too small (N/B: colony count must be between 30 and 300)\n\n");
+                else if (c_count > 300)
+                    printf("Colony Count too Numerous (N/B: colony count must be between 30 and 300)\n\n");
+            }
+
+        } while(c_count < 30 || c_count > 300);
 
         printf("\n\nInput the VOLUME OF THE INNOCULUM in (ml) => ");
         scanf("%f", &vol_cp);
