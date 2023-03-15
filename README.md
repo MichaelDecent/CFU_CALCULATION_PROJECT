@@ -8,5 +8,4 @@ This is a measure of viable bacterial or fungal cells. In direct microscopic cou
 
 
 ### A FLOWCART DESCRIBING THE WORK OF THE CFU CALCULATOR
-![CFU CALCULATOR FLOWCHART (1)](https://user-images.githubusercontent.com/111002205/220298047-18b40bc7-19bb-4b51-834a-c14e1f6b97ec.jpg)
-
+![CFU CALCULATOR FLOWCHART (2)](https://user-images.githubusercontent.com/111002205/225180352-91d4cfc0-a50d-4ee1-8c9d-baa539eb73e3.jpg)
