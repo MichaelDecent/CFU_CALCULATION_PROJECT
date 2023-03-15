@@ -6,54 +6,20 @@
  */
 int main(void)
 {
-    int status, exit = 1;
-    int c_count, tube_no;
+    int status, exit = 1, c_count;
     float vol_cp, FDF, CFU;
-    float vol_dil, vol_stock;
+
 
     do
     {
         clear();
 
         printf ("\t\t\t============ COLONY FORMING UNIT (CFU) CALCULATOR ==========\t\t\t\n\n\n");
+        c_count = get_colony_count();
 
-        c_count = 0;
-        do
-        {    
-            printf("Input the COLONY COUNT (colony count must be between 30 and 300)=> ");
-            c_count = char_error (stdin);
-            if (c_count == 0)
-                printf("Invalid number entered (N/B: colony count must be between 30 and 300)\n\n" );
+        vol_cp = culture_plate_vol();
 
-            else
-            {
-                if (c_count < 30)
-                    printf("Colony Count too few to count (N/B: colony count must be between 30 and 300)\n\n");
-                else if (c_count > 300)
-                    printf("Colony Count too Numerous to count (N/B: colony count must be between 30 and 300)\n\n");
-            }
-
-        } while(c_count < 30 || c_count > 300);
-
-        printf("\n\nInput the VOLUME OF CULTURE PLATE in (ml) => ");
-        scanf("%f", &vol_cp);
-
-        printf("\n\nInput DILUTION FACTOR if already determined \nOR\nPress 1 to determine the DILUTION FACTOR\n");
-        scanf("%d", &status);
-        if (status == 1)
-        {
-            printf("\n\nTo determine your dilution factor input the following: \n");
-            printf("\n 1. VOLUME OF DILUTIENT in (ml) => ");
-            scanf("%f", &vol_dil);
-            printf("\n 2. VOLUME STOCK SOLUTION in (ml) => ");
-            scanf("%f", &vol_stock);
-            printf("\n 3. The position number of the test-tube used to innoculate, to obtain colony count => ");
-            scanf("%d", &tube_no);
-            FDF = dil_factor(vol_dil, vol_stock, tube_no);
-            printf ("\nDILUTION FACTOR IS => %.1e", FDF);
-        }
-        else
-            FDF = (float)status;
+        FDF = get_dilution_factor();
 
         CFU = calc_cfu(FDF, c_count, vol_cp);
 
