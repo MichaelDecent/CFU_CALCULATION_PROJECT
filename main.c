@@ -20,7 +20,7 @@ int main(void)
         c_count = 0;
         do
         {    
-            printf("Input the COLONY COUNT => ");
+            printf("Input the COLONY COUNT (colony count must be between 30 and 300)=> ");
             c_count = char_error (stdin);
             if (c_count == 0)
                 printf("Invalid number entered (N/B: colony count must be between 30 and 300)\n\n" );
@@ -28,14 +28,14 @@ int main(void)
             else
             {
                 if (c_count < 30)
-                    printf("Colony Count too small (N/B: colony count must be between 30 and 300)\n\n");
+                    printf("Colony Count too few to count (N/B: colony count must be between 30 and 300)\n\n");
                 else if (c_count > 300)
-                    printf("Colony Count too Numerous (N/B: colony count must be between 30 and 300)\n\n");
+                    printf("Colony Count too Numerous to count (N/B: colony count must be between 30 and 300)\n\n");
             }
 
         } while(c_count < 30 || c_count > 300);
 
-        printf("\n\nInput the VOLUME OF THE INNOCULUM in (ml) => ");
+        printf("\n\nInput the VOLUME OF CULTURE PLATE in (ml) => ");
         scanf("%f", &vol_cp);
 
         printf("\n\nInput DILUTION FACTOR if already determined \nOR\nPress 1 to determine the DILUTION FACTOR\n");
@@ -45,7 +45,7 @@ int main(void)
             printf("\n\nTo determine your dilution factor input the following: \n");
             printf("\n 1. VOLUME OF DILUTIENT in (ml) => ");
             scanf("%f", &vol_dil);
-            printf("\n 2. VOLUME STOCK SOLUTE in (ml) => ");
+            printf("\n 2. VOLUME STOCK SOLUTION in (ml) => ");
             scanf("%f", &vol_stock);
             printf("\n 3. The position number of the test-tube used to innoculate, to obtain colony count => ");
             scanf("%d", &tube_no);
